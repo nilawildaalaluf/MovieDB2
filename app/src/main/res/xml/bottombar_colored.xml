@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_home"
+        icon="@mipmap/ic_home"
+        title="Home"
+        barColorWhenSelected="@color/colorPrimary" />
+    <tab
+        id="@+id/tab_toprated"
+        icon="@mipmap/ic_favorite"
+        title="Top Rated"
+        barColorWhenSelected="#FF5252" />
+    <tab
+        id="@+id/tab_popular"
+        icon="@mipmap/ic_popular"
+        title="Most Popular"
+        barColorWhenSelected="#004d40" />
+    <tab
+        id="@+id/tab_favorite"
+        icon="@mipmap/bookmark"
+        title="Bookmark"
+        barColorWhenSelected="#5D4037" />
+</tabs>
