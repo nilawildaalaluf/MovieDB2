@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
@@ -97,16 +98,18 @@ public class HomeFragment extends Fragment {
              gridAdapter = new GridAdapter(getActivity(), movies, R.layout.grid_movie,
                 new String[]{"id", "backdrop_path"}, new int[]{R.id.text_id, R.id.img_backdrop});
 
-        gridView.setAdapter(gridAdapter);
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                api.id = ((TextView) view.findViewById(R.id.text_id)).getText().toString();
-                startActivity(new Intent(getActivity(), DetailActivity.class));
-                Log.d("Log id", api.id);
-            }
-        });
+            gridView.setAdapter(gridAdapter);
+            gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    api.id = ((TextView) view.findViewById(R.id.text_id)).getText().toString();
+                    startActivity(new Intent(getActivity(), DetailActivity.class));
+                    Log.d("Log id", api.id);
+                }
+            });
 
+        }else {
+            Toast.makeText(getActivity(),"Null Activity", Toast.LENGTH_SHORT).show();
         }
 
 
