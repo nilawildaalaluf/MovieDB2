@@ -32,6 +32,11 @@ public class GridAdapter extends SimpleAdapter {
         inflater.from(context);
     }
 
+
+    public String getIdData(int position){
+        return arrayList.get(position).get("id");
+    }
+
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         //View view = super.getView(position, convertView, parent);

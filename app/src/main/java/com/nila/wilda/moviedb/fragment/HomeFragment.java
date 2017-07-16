@@ -94,7 +94,7 @@ public class HomeFragment extends Fragment {
 
     private void getAdapter() {
         if (getActivity() != null) {
-            // Code goes here.
+
              gridAdapter = new GridAdapter(getActivity(), movies, R.layout.grid_movie,
                 new String[]{"id", "backdrop_path"}, new int[]{R.id.text_id, R.id.img_backdrop});
 
@@ -102,16 +102,15 @@ public class HomeFragment extends Fragment {
             gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    api.id = ((TextView) view.findViewById(R.id.text_id)).getText().toString();
-                    startActivity(new Intent(getActivity(), DetailActivity.class));
+                    //api.id = ((TextView) view.findViewById(R.id.text_id)).getText().toString();
+                    api.id = gridAdapter.getIdData(position);
+                    Intent intent = new Intent(getActivity(),DetailActivity.class);
+                    intent.putExtra("id",api.id);
+                    startActivity(intent);
                     Log.d("Log id", api.id);
                 }
             });
 
-        }else {
-            Toast.makeText(getActivity(),"Null Activity", Toast.LENGTH_SHORT).show();
         }
-
-
     }
 }

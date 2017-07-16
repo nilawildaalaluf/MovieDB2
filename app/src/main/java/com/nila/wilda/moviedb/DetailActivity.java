@@ -59,6 +59,8 @@ public class DetailActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("DetailMovie");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        api.id = getIntent().getStringExtra("id");
+
         link = "https://api.themoviedb.org/3/movie/" + api.id + "?api_key=7d55ff3af7ef009beea088a145ef8a21";
         get_detail = true; key = "";
 
