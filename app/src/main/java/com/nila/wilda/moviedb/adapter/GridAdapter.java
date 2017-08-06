@@ -39,7 +39,7 @@ public class GridAdapter extends SimpleAdapter {
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-        //View view = super.getView(position, convertView, parent);
+         //View view = super.getView(position, convertView, parent);
         View view = LayoutInflater.from (parent.getContext()).inflate(layout,null);
 
         ImageView image = (ImageView) view.findViewById(R.id.img_backdrop);

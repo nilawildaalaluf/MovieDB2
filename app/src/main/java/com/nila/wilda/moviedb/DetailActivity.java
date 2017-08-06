@@ -20,6 +20,7 @@ import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.nila.wilda.moviedb.config.api;
+import com.nila.wilda.moviedb.helper.DatabaseHelper;
 import com.nila.wilda.moviedb.util.Utility;
 import com.squareup.picasso.Picasso;
 
@@ -50,6 +51,8 @@ public class DetailActivity extends AppCompatActivity {
     ArrayList<HashMap<String, String>> trailers = new ArrayList<HashMap<String, String>>();
 
     public static String key;
+
+    DatabaseHelper databaseHelper = new DatabaseHelper(DetailActivity.this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -148,8 +151,7 @@ public class DetailActivity extends AppCompatActivity {
 
                 key = ((TextView) view.findViewById(R.id.text_key)).getText().toString();
                 startActivity(new Intent(DetailActivity.this, YoutubeActivity.class));
-//                Toast.makeText(getApplicationContext(), key,
-//                        Toast.LENGTH_LONG).show();
+//
 
             }
         });
@@ -185,6 +187,9 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     public void bookmarkThis(View view) {
+//        api.id = getIntent().getStringExtra("id");
+//        data = getText().
+
         Toast.makeText(getApplicationContext(), "Added to Bookmark", Toast.LENGTH_SHORT).show();
     }
 }
